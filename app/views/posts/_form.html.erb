@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <%= form.text_field :title, id: :post_title, class: 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
-  </div>
-
-  <div class="field">
+  
+  <div class="field form-group">
     <%= form.label :category %>
-    <%= form.text_field :category, id: :post_category %>
+    <%= form.text_field :category, id: :post_category, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :post_body, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '登録する', class: 'btn btn-primary' %>
   </div>
 <% end %>
