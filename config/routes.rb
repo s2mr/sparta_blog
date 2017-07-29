@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'authors/edit'
+
+  get 'authors/update'
+
   resources :posts
   root 'posts#index'
   get 'category/:category' => 'posts#index_from_category', as:'category'
