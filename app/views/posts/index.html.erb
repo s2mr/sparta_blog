@@ -15,13 +15,15 @@
   
 </div>
 <div class="col-md-4">
-  <div class="side-row">
+  <div class="thumbnail">
     <img src="<%= @author.image_url %>">
     <h2>著者名:<%= @author.name %></h2>
     <p>詳細:<%= @author.description %></p>
   </div>
-  <div class="side-row">
-    
+  <div class="list-group">
+      <% @recent_posts.each do |post|%>
+        <%= link_to post.title, post, class: 'list-group-item'%>
+      <% end %>
   </div>
 
 </div>

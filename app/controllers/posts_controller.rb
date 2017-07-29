@@ -4,8 +4,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     @author = Author.find(1)
+    @recent_posts = Post.all.order(created_at: :desc).limit(5)
   end
 
   # GET /posts/1
