@@ -17,10 +17,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @submit_name = '登録する'
   end
 
   # GET /posts/1/edit
   def edit
+    @submit_name = '更新する'
   end
 
   # POST /posts

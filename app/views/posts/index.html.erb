@@ -1,16 +1,13 @@
 <div class="col-md-8">
-  <p id="notice"><%= notice %></p>
-  
   <% @posts.each do |post| %>
     
     <h2>タイトル：<%= post.title %></h2>
     <p>カテゴリ：<%= post.category %></p>
     <p>作成日：<%= post.created_at %></p>
-    <p><%= post.body %></p>
+    <p><%= truncate(post.body, length:50) %></p>
     <%= link_to '続きを読む', post, class: 'btn btn-default'%>
     
   <% end %>
-
   <br>
   
 </div>
