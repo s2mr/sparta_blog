@@ -6,7 +6,7 @@
 </p>
 <hr>
 <p>
-  <%= @post.body %>
+  <%= simple_format(@post.body) %>
 </p>
 <hr>
 <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-default', submit_name: '更新する' %> |

@@ -22,5 +22,9 @@
         <%= link_to post.title, post, class: 'list-group-item'%>
       <% end %>
   </div>
-
+  <div class="list-group">
+      <% @all_category.each do |category|%>
+        <p class="list-group-item"><%= category %></p>
+      <% end %>
+  </div>
 </div>
