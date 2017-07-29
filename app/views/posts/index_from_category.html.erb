@@ -1,0 +1,19 @@
+<div class="col-md-8">
+  <h1><strong><%=@category%></strong>での検索結果</h1>
+  <p><strong><%=@posts.count%></strong> 件ヒットしました！</p>
+  <hr>
+  <% @posts.each do |post| %>
+    
+    <h3>タイトル：<%= post.title %></h3>
+    <p>カテゴリ：<%= post.category %></p>
+    <p>作成日：<%= post.created_at %></p>
+    <p><%= truncate(post.body, length:50) %></p>
+    <%= link_to '続きを読む', post, class: 'btn btn-default'%>
+    <br>
+        <br>
+  <% end %>
+  <br>
+  
+</div>
+<div class="col-md-4">
+</div>

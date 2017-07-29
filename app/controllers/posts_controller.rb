@@ -9,6 +9,11 @@ class PostsController < ApplicationController
     @recent_posts = Post.all.order(created_at: :desc).limit(5)
     @all_category = Post.pluck(:category).uniq
   end
+  
+  def index_from_category
+    @category = params[:category]
+    @posts = Post.where(category: params[:category])
+  end
 
   # GET /posts/1
   # GET /posts/1.json

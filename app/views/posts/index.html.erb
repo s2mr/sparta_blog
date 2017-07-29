@@ -24,7 +24,7 @@
   </div>
   <div class="list-group">
       <% @all_category.each do |category|%>
-        <p class="list-group-item"><%= category %></p>
+        <%= link_to category, category_path(category), class: 'list-group-item'%>
       <% end %>
   </div>
 </div>
