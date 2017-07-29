@@ -35,6 +35,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    
+    @post.category = "未指定" if @post.category.length==0
 
     respond_to do |format|
       if @post.save
@@ -72,7 +74,6 @@ class PostsController < ApplicationController
   end
   
   def destroy_from_category
-    # @category = 
     Post.where(category: params[:category]).destroy_all
     redirect_to posts_path
   end
