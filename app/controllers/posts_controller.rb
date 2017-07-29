@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @q = Post.all.order(created_at: :desc).ransack(params[:q])
     @posts = @q.result.page(params[:page]).per(5)
     @author = Author.find(1)
-    @recent_posts = Post.all.order(created_at: :desc).limit(5)
+    @recent_posts = Post.all.find_newest_article
     @all_category = Post.pluck(:category).uniq
   end
   
