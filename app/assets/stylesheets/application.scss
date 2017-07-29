@@ -15,3 +15,12 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.side-row {
+  border: 1px solid #000;
+  margin:20px 0px;
+  padding: 10px;
+}
+.side-row img {
+  // margin: 0 auto;
+}

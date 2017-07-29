@@ -7,15 +7,21 @@
     <p>カテゴリ：<%= post.category %></p>
     <p>作成日：<%= post.created_at %></p>
     <p><%= post.body %></p>
-    <%= link_to '続きを読む', post, class: 'btn btn-primary'%>
+    <%= link_to '続きを読む', post, class: 'btn btn-default'%>
     
   <% end %>
 
   <br>
   
-  <%= link_to 'New Post', new_post_path %>
 </div>
 <div class="col-md-4">
-  <h2>著者名:</h2>
-  <p>詳細:</p>
+  <div class="side-row">
+    <img src="<%= @author.image_url %>">
+    <h2>著者名:<%= @author.name %></h2>
+    <p>詳細:<%= @author.description %></p>
+  </div>
+  <div class="side-row">
+    
+  </div>
+
 </div>
