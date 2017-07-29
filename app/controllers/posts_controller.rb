@@ -70,6 +70,12 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def destroy_from_category
+    # @category = 
+    Post.where(category: params[:category]).destroy_all
+    redirect_to posts_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

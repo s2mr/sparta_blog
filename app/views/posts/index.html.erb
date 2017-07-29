@@ -17,14 +17,21 @@
     <h2>著者名:<%= @author.name %></h2>
     <p>詳細:<%= @author.description %></p>
   </div>
-  <div class="list-group">
-      <% @recent_posts.each do |post|%>
-        <%= link_to post.title, post, class: 'list-group-item'%>
-      <% end %>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">最近の投稿</div>
+    <div class="panel-body list-group">
+        <% @recent_posts.each do |post|%>
+          <%= link_to post.title, post, class: 'list-group-item'%>
+        <% end %>
+    </div>
   </div>
-  <div class="list-group">
-      <% @all_category.each do |category|%>
-        <%= link_to category, category_path(category), class: 'list-group-item'%>
-      <% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading">カテゴリリスト</div>
+    <div class="panel-body list-group">
+        <% @all_category.each do |category|%>
+          <%= link_to category, category_path(category), class: 'list-group-item'%>
+        <% end %>
+    </div>
   </div>
 </div>
