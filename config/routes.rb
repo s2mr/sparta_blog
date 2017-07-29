@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'authors/edit'
+  get 'authors/edit', as: 'author_edit'
 
-  get 'authors/update'
+  patch 'authors/update', as: 'author_update'
 
   resources :posts
   root 'posts#index'

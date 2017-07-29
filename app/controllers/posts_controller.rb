@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @q = Post.all.order(created_at: :desc).ransack(params[:q])
+    @posts = @q.result.page(params[:page]).per(5)
     @author = Author.find(1)
     @recent_posts = Post.all.order(created_at: :desc).limit(5)
     @all_category = Post.pluck(:category).uniq

@@ -1,2 +1,36 @@
-<h1>Authors#edit</h1>
-<p>Find me in app/views/authors/edit.html.erb</p>
+<h1>マイプロフィール</h1>
+
+<%= form_with model: @author, local:true do |form| %>
+
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_field :category, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :image_url %>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'アップデート', class: 'btn btn-primary' %>
+  </div>
+  
+<% end %>
